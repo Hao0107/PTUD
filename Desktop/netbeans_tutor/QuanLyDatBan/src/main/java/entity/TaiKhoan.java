@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package entity;
 
 /**
@@ -9,13 +5,17 @@ package entity;
  * @author Admin
  */
 public class TaiKhoan {
-    private String maTK, tenTK, chucVu, matKhau;
+    private String tenTK;
+    private String matKhau, chucVu;
+    private String maTK;
 
-    public String getMaTK() {
-        return maTK;
+    public TaiKhoan(String tenTK, String matKhau) {
+        this.tenTK = tenTK;
+        this.matKhau = matKhau;
     }
 
-    public String getTenTK() {
+    // Getters và setters
+    public String gettenTK() {
         return tenTK;
     }
 
@@ -29,22 +29,19 @@ public class TaiKhoan {
     
     
     public void setTenTK(String tenTK) {
-        if(tenTK.equalsIgnoreCase("")){
-            this.tenTK = "TaiKhoanMacDinh000";
-        }
-        else{
-            this.tenTK = tenTK;
-        }
+        this.tenTK = tenTK;
     }
-    
-    // kiem tra dieu kien
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
+
+    public String getmatKhau() {
+        return matKhau;
     }
-    
-    // kiem tra dieu kien
+
     public void setMatKhau(String matKhau) {
         this.matKhau = matKhau;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
     }
 
     public TaiKhoan(String maTK, String tenTK, String chucVu, String matKhau) {
@@ -53,7 +50,7 @@ public class TaiKhoan {
             this.maTK = "TK000";
         }else{
             this.maTK = maTK;
-        }
+}
         setTenTK(tenTK);
         setChucVu(chucVu);
         setMatKhau(matKhau);

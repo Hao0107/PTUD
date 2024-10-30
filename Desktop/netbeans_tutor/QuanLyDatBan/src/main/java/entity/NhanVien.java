@@ -50,11 +50,11 @@ public class NhanVien {
         this.ngayVaoLam = ngayVaoLam;
     }
 
-    public NhanVien(String tenNV, String sDT, String email, LocalDate ngayVaoLam) {
+    public NhanVien(String maNV, String tenNV, String sDT, String email) {
+    	this.maNV = maNV;
         this.tenNV = tenNV;
         this.sDT = sDT;
         this.email = email;
-        this.ngayVaoLam = ngayVaoLam;
     }
 
     public NhanVien() {

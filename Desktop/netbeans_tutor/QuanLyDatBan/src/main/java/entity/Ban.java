@@ -4,6 +4,8 @@
  */
 package entity;
 
+import java.util.Objects;
+
 /**
  *
  * @author Admin
@@ -11,6 +13,12 @@ package entity;
 public class Ban {
     private String maBan, viTri;
     private int soGhe;
+    private String trangThaiBan;
+    private LoaiBan loaiBan;
+
+    public String getMaBan() {
+        return maBan;
+    }
 
     public String getViTri() {
         return viTri;
@@ -25,19 +33,50 @@ public class Ban {
     }
 
     public void setSoGhe(int soGhe) {
-        if(soGhe>1){
-            this.soGhe = soGhe;
-        }
-        else{
-            this.soGhe = 2;
-        }
+        this.soGhe = soGhe;
     }
 
-    public String getMaBan() {
-        return maBan;
+    public String getTrangThaiBan() {
+        return trangThaiBan;
     }
 
-    public Ban(String maBan, String viTri, int soGhe) {
+    public void setTrangThaiBan(String trangThaiBan) {
+        this.trangThaiBan = trangThaiBan;
+    }
+
+    public LoaiBan getLoaiBan() {
+        return loaiBan;
+    }
+
+    public void setLoaiBan(LoaiBan loaiBan) {
+        this.loaiBan = loaiBan;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.maBan);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ban other = (Ban) obj;
+        return Objects.equals(this.maBan, other.maBan);
+    }
+    
+    
+    
+    public Ban(String maBan, LoaiBan loaiBan, String trangThaiBan, int soGhe, String viTri) {
         if(maBan.equalsIgnoreCase("")){
             this.maBan = "B000";
         }
@@ -46,7 +85,12 @@ public class Ban {
         }
         this.viTri = viTri;
         this.soGhe = soGhe;
+        this.trangThaiBan = trangThaiBan;
+        this.loaiBan = loaiBan;
     }
+    
+    
+    
     
     // contructer khong them vi tri
     public Ban(String maBan, int soGhe) {
