@@ -1,2 +1,2 @@
 # PTUD
-Môn phát triển ứng dụng HK1 2024-2025
+Môn phát triển ứng dụng IUH HK1 2024-2025
