@@ -2,16 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package gui;
+package gui.card;
 
 import entity.Ban;
+import entity.NhanVien;
+import gui.datBan.Frame_DatBan;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
 public class Card_Ban extends javax.swing.JPanel {
-
+    private Ban ban;
+    private NhanVien nhanvien;
     /**
      * Creates new form Card_Ban
      */
@@ -30,9 +35,10 @@ public class Card_Ban extends javax.swing.JPanel {
 
         card_ban = new javax.swing.JPanel();
         img = new javax.swing.JLabel();
-        lbValue = new javax.swing.JLabel();
-        lbTitle = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lbmaban = new javax.swing.JLabel();
+        lbsoghe = new javax.swing.JLabel();
+        lbtrangthai = new javax.swing.JLabel();
+        btn_DatBan = new javax.swing.JButton();
 
         card_ban.setBackground(new java.awt.Color(255, 255, 255));
         card_ban.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -40,22 +46,26 @@ public class Card_Ban extends javax.swing.JPanel {
         img.setBackground(new java.awt.Color(233, 228, 240));
         img.setOpaque(true);
 
-        lbValue.setForeground(new java.awt.Color(108, 91, 123));
-        lbValue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbValue.setText("Value");
+        lbmaban.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbmaban.setForeground(new java.awt.Color(108, 91, 123));
+        lbmaban.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbmaban.setText("Title");
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbTitle.setForeground(new java.awt.Color(108, 91, 123));
-        lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Title");
+        lbsoghe.setForeground(new java.awt.Color(108, 91, 123));
+        lbsoghe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbsoghe.setText("Value");
 
-        jButton1.setBackground(new java.awt.Color(153, 51, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Đặt bàn");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lbtrangthai.setForeground(new java.awt.Color(108, 91, 123));
+        lbtrangthai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbtrangthai.setText("Value");
+
+        btn_DatBan.setBackground(new java.awt.Color(0, 102, 102));
+        btn_DatBan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_DatBan.setForeground(new java.awt.Color(255, 255, 255));
+        btn_DatBan.setText("Đặt bàn");
+        btn_DatBan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_DatBanActionPerformed(evt);
             }
         });
 
@@ -63,25 +73,30 @@ public class Card_Ban extends javax.swing.JPanel {
         card_ban.setLayout(card_banLayout);
         card_banLayout.setHorizontalGroup(
             card_banLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(img, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(card_banLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(card_banLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(lbValue, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(card_banLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_DatBan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbsoghe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbmaban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbtrangthai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_banLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         card_banLayout.setVerticalGroup(
             card_banLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(card_banLayout.createSequentialGroup()
-                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbmaban, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbValue, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(lbsoghe, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbtrangthai, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_DatBan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -89,7 +104,7 @@ public class Card_Ban extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(card_ban, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(card_ban, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,33 +112,49 @@ public class Card_Ban extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_DatBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DatBanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (ban != null && !ban.getTrangThaiBan().equalsIgnoreCase("Đặt trước")) {
+//            guiHoaDon(ban); // Gọi hàm xử lý khi nhấn "Đặt bàn"
+            Frame_DatBan db = new Frame_DatBan(ban, nhanvien);
+            db.setVisible(true);
+        }else {
+            // Nếu điều kiện sai, hiển thị thông báo lỗi
+            JOptionPane.showMessageDialog(this, "Lỗi: Bàn đã được đặt trước!", "Thông báo Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_DatBanActionPerformed
     
-    public void setBanData(Ban ban) {
+    public void setBanData(Ban ban, NhanVien nhanVien) {
         // Thiết lập các thuộc tính hiển thị cho Card_Ban từ đối tượng Ban
-        setlbTitle("Mã bàn: " + ban.getMaBan()); // Hoặc "Bàn " + ban.getMaBan() nếu cần hiển thị số bàn
-        setlbValue("Số ghế: " + ban.getSoGhe());
+        this.ban = ban;
+        this.nhanvien = nhanVien;
+        lbmaban.setText("Mã bàn: " + ban.getMaBan()); 
+        lbsoghe.setText("Số ghế: " + ban.getSoGhe());
+        lbtrangthai.setText("Trạng thái: " + ban.getTrangThaiBan());
         
+        String trangThai = ban.getTrangThaiBan().trim();
+        ImageIcon icon = null;
+        if(trangThai.equalsIgnoreCase("Trống")){
+            icon = new ImageIcon("C:\\Users\\Admin\\Desktop\\netbeans_tutor\\QuanLyDatBan\\src\\main\\java\\icon\\table_green.png");
+        }
+        else if(trangThai.equalsIgnoreCase("Có Khách")){
+            icon = new ImageIcon("C:\\Users\\Admin\\Desktop\\netbeans_tutor\\QuanLyDatBan\\src\\main\\java\\icon\\table_gray.png");
+        }
+        else{
+            icon = new ImageIcon("C:\\Users\\Admin\\Desktop\\netbeans_tutor\\QuanLyDatBan\\src\\main\\java\\icon\\table_red.png");
+        }
+        img.setIcon(icon);
         // Tùy chọn, hiển thị trạng thái bàn hoặc vị trí nếu cần:
         // lbStatus.setText(ban.getTrangThaiBan());
         // lbLocation.setText(ban.getViTri());
     }
-    
-    public void setlbTitle(String str){
-        lbTitle.setText(str);
-    }
-    
-    public void setlbValue(String str){
-        lbValue.setText(str);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_DatBan;
     private javax.swing.JPanel card_ban;
     private javax.swing.JLabel img;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel lbTitle;
-    private javax.swing.JLabel lbValue;
+    private javax.swing.JLabel lbmaban;
+    private javax.swing.JLabel lbsoghe;
+    private javax.swing.JLabel lbtrangthai;
     // End of variables declaration//GEN-END:variables
 }
