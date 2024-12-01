@@ -63,6 +63,7 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         tieuDe = new javax.swing.JLabel();
         khachHang_2 = new javax.swing.JPanel();
@@ -89,9 +90,17 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
         table_thongTinKH = new javax.swing.JTable();
         thongTinKH_label = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         tieuDe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tieuDe.setForeground(new java.awt.Color(0, 102, 102));
         tieuDe.setText("QUẢN LÝ KHÁCH HÀNG");
+
+        khachHang_2.setBackground(new java.awt.Color(255, 255, 255));
+
+        lablel_1.setBackground(new java.awt.Color(255, 255, 255));
 
         maKH.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         maKH.setText("Mã khách hàng:");
@@ -108,6 +117,7 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
         gioiTinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         gioiTinh.setText("Giới tính:");
 
+        buttonGroup1.add(rbtnNam);
         rbtnNam.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rbtnNam.setText("Nam");
         rbtnNam.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +126,7 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(rbtnNu);
         rbtnNu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rbtnNu.setText("Nữ");
 
@@ -189,6 +200,8 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
                     .addComponent(rbtnNu))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
+
+        button_cn.setBackground(new java.awt.Color(255, 255, 255));
 
         them.setBackground(new java.awt.Color(0, 255, 255));
         them.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -551,6 +564,7 @@ public class QuanLyKhachHang extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel button_cn;
     private javax.swing.JLabel diaChi;
     private javax.swing.JLabel gioiTinh;
